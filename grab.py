@@ -73,10 +73,10 @@ def grabbing_screen(tmp_dir, number_pages=None, cmp_pages_after=None):
     m = PyMouse()
     grab_coords = []
 
-    raw_input("Set mouse to up left corner and press enter...")
+    raw_input("Set mouse to top left corner and press enter...")
     grab_coords += list(m.position())
 
-    raw_input("Set mouse to down left corner and press enter...")
+    raw_input("Set mouse to bottom righht corner and press enter...")
     grab_coords += list(m.position())
 
     grab_coords[2] -= grab_coords[0]
@@ -84,7 +84,7 @@ def grabbing_screen(tmp_dir, number_pages=None, cmp_pages_after=None):
 
     grab_coords = map(lambda x: str(int(x)), grab_coords)
 
-    raw_input("Set mouse to position for paging and press enter")
+    raw_input("Set mouse to next page button and press enter to start")
     paging_coords_args = list(m.position()) + [1]
 
     def make_screenshot(coords, filename):
